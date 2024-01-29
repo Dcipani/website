@@ -37,6 +37,7 @@ section{
     position: relative;
     width: 100%;
     left: 50%;
+    margin-bottom: 50vh;
     transform: translateX(-50%);
 }
 
@@ -45,6 +46,12 @@ section{
     width: 100%;
     height: 100%;
 }    
+
+
+
+
+
+
 
 /* -------------------------------------------HEADER SECTION-------------------------------------------  */
 
@@ -151,4 +158,131 @@ section{
     text-align: center;
     text-wrap: balance;
     font-size: 1.4rem;
+}
+
+/* -------------------------------------------PORTFOLIO SECTION-------------------------------------------  */
+#portfolio{
+    position: relative;
+    height: 200%;
+}
+
+.sticky_portfolio{
+    position: sticky;
+    top:0;
+    width: 100%;
+    height: 50%;
+}
+
+.slider_container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.projects_slider{
+    height: 100%;
+    display: flex;
+    width: min-content;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.project{
+    position: relative;
+    width: 25vw;
+    height: 100%;
+    padding: 80px 20px 60px;
+    display: flex;
+    flex-direction: column;
+        justify-content: center;
+
+}
+
+.image_container{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9/12 ;
+    overflow: hidden;
+}
+
+.project_image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0% 50%;
+}
+
+
+
+/* -------------------------------------------CONTACT-------------------------------------------  */
+
+.social-icons{
+    margin-top: 15px;
+}
+.social-icons a{
+   text-decoration: none;
+   font-size: 50px;
+   margin-right: 15px;
+   margin-bottom: 50px;
+   color: #ababab;
+   display: inline-block;
+   transition: transform 0.5s;
+}
+.social-icons a:hover{
+   color: var(--burgundy);
+   transform: translateY(-5px);
+}
+/* -------------------------------------------COPYRIGHT-------------------------------------------  */
+
+
+.copyright-footer{
+    margin-top: 100px;
+    width: 100vw;
+    background: var(--brown);
+    height: 60px;
+}
+.copyright-footer center{
+    color: var(--white);
+    padding: 20px 20px;
+}
+
+
+/* -------------------------------------------SMALL SCREENS-------------------------------------------  */
+
+
+
+@media only screen and (max-width: 1100px){
+    p{
+        font-size: .8rem;
+    }
+
+    #portfolio{
+        height: 400%;
+    }
+
+    .sticky_portfolio{
+        height: 25%;
+    }
+
+    .project {
+        width: 50vw;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    #portfolio{
+        height: 800%;
+    }
+
+    .sticky_portfolio{
+        height: 12.5%;
+    }
+
+    .project {
+        width:100vw ;
+    }
+
+    
 }
