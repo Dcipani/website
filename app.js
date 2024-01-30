@@ -1,5 +1,5 @@
 import { createProjects } from "./projects.js";
-createProjects();
+// createProjects();
 
 // ------------------------------------------------------- SCROLL ANIMATIONS -------------------------------------------------------
 

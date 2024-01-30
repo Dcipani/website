@@ -55,7 +55,7 @@ const createProjects = () => {
         image.classList.add('project_image');
         image.classList.add('on-scroll-right');
 
-        image.draggable = "false";
+        image.draggable = false;
         image.src = project.image;
 
         let projectDetails = document.createElement('div');
