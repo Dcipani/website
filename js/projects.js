@@ -4,43 +4,43 @@ const projects = [
     {
         name: 'PROJECT 1',
         type: 'GAME DEV',
-        image: './images/headshot.png'
+        image: 'https://imageskincare.ie/wp-content/uploads/2023/09/serum-main_750x960_crop_center.webp'
     },
     {
         name: 'PROJECT 2',
         type: 'GAME DEV',
-        image: './images/headshot.png'
+        image: 'https://imageskincare.ie/wp-content/uploads/2023/09/serum-main_750x960_crop_center.webp'
     },
     {
-        name: 'PROJECT 3',
+        name: 'PROJECT 1',
         type: 'GAME DEV',
-        image: './images/work-1.png'
+        image: 'https://imageskincare.ie/wp-content/uploads/2023/09/serum-main_750x960_crop_center.webp'
     },
     {
-        name: 'PROJECT 4',
+        name: 'PROJECT 2',
         type: 'GAME DEV',
-        image: './images/headshot.png'
+        image: 'https://imageskincare.ie/wp-content/uploads/2023/09/serum-main_750x960_crop_center.webp'
     },
     {
-        name: 'PROJECT 5',
+        name: 'PROJECT 1',
         type: 'GAME DEV',
-        image: './images/headshot.png'
+        image: 'https://imageskincare.ie/wp-content/uploads/2023/09/serum-main_750x960_crop_center.webp'
     },
     {
-        name: 'PROJECT 6',
+        name: 'PROJECT 2',
         type: 'GAME DEV',
-        image: './images/headshot.png'
+        image: 'https://imageskincare.ie/wp-content/uploads/2023/09/serum-main_750x960_crop_center.webp'
     },
     {
-        name: 'PROJECT 7',
+        name: 'PROJECT 1',
         type: 'GAME DEV',
-        image: './images/headshot.png'
+        image: 'https://imageskincare.ie/wp-content/uploads/2023/09/serum-main_750x960_crop_center.webp'
     },
     {
-        name: 'PROJECT 8',
+        name: 'PROJECT 2',
         type: 'GAME DEV',
-        image: './images/headshot.png'
-    },
+        image: 'https://imageskincare.ie/wp-content/uploads/2023/09/serum-main_750x960_crop_center.webp'
+    }
 
 ]
 
@@ -69,7 +69,7 @@ const createProjects = () => {
         projectDetails.append(projectTitle, projectType)
         projectDiv.append(image, projectDetails);
 
-        document.getElementById('image-track').appendChild(projectDiv);
+        document.getElementById('image-track').append(projectDiv);
     })
 
 }
