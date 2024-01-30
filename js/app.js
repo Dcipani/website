@@ -1,6 +1,10 @@
 import { createProjects } from "./projects.js";
 createProjects();
 
+// ------------------------------------------------------- BARBA SETUP -------------------------------------------------------
+
+Barba.Pjax.start();
+// ------------------------------------------------------- LENIS SETUP -------------------------------------------------------
 const lenis = new Lenis()
     lenis.on('scroll', ScrollTrigger.update)
 
@@ -9,6 +13,8 @@ const lenis = new Lenis()
     })
 
     gsap.ticker.lagSmoothing(0)
+
+
 
 // ------------------------------------------------------- HEADER ANIMATIONS -------------------------------------------------------
 
