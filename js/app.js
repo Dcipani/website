@@ -1,6 +1,33 @@
 import { createProjects } from "./projects.js";
 createProjects();
 
+const lenis = new Lenis()
+    lenis.on('scroll', ScrollTrigger.update)
+
+    gsap.ticker.add((time)=>{
+    lenis.raf(time * 1000)
+    })
+
+    gsap.ticker.lagSmoothing(0)
+
+// ------------------------------------------------------- HEADER ANIMATIONS -------------------------------------------------------
+
+
+const bumpies = document.querySelectorAll('.bumpy_text');
+for (let i = 0; i < bumpies.length; i++) {
+  const bumpyText = new SplitType( `#bumpy_text${i}`)
+  gsap.to('.char', {
+    y:0,
+    stagger: 0.05,
+    delay: 0.2,
+    duration: .1
+  })
+}
+
+
+
+
+
 // ------------------------------------------------------- SCROLL ANIMATIONS -------------------------------------------------------
 
 const scrollEntry = document.querySelectorAll(".enter-on-scroll")

@@ -9,13 +9,27 @@
     <title>Portfolio Website</title>
 </head>
 <body>
-<section>testing321</section>
+<section id="header">
+    <div class="header-text">
+        <h2 class="bumpy_text" id="bumpy_text0">hi, my name is </h2>
+        <svg viewBox = " 0 0 400 200">
+            <text class="header-title" text x="50%" y="50%" text-anchor="middle">dario cipani</text>
+        </svg>
+        <p >I'm a CS and Linguistics student at Trinity College Dublin. </p>
+
+    </div>
+    
+</section>
 <section id="about">
-    <div class="enter-on-scroll">
+    <div class="enter-on-scroll col-table">
         <div class="on-scroll-left">
-            <img src="./images/headshot.png" width="300" >
+            <div class="bubble col-1">
+                <img src="./images/work-1.png" width="300" >
+            </div>
+
         </div>
-        <div class="on-scroll-right">
+        <div class="on-scroll-right col-1">
+            <h1> About</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam at itaque enim nihil voluptatem natus, accusantium modi cumque debitis omnis dolore in, pariatur odit facilis quia quaerat voluptate consectetur molestiae?</p>
         </div>
     </div>
@@ -24,7 +38,7 @@
 <section id="portfolio">
 
         <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-            
+            <h1> Projects</h1>
         </div>
 
 </section>
@@ -51,15 +65,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script> 
-<script>
-    const lenis = new Lenis()
-    lenis.on('scroll', ScrollTrigger.update)
+<script src="https://unpkg.com/split-type"></script>
 
-    gsap.ticker.add((time)=>{
-    lenis.raf(time * 1000)
-    })
-
-    gsap.ticker.lagSmoothing(0)
-</script>
+    
 </body>
 </html>
