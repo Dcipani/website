@@ -4,42 +4,42 @@ const projects = [
     {
         name: 'PROJECT 1',
         type: 'GAME DEV',
-        image: '../images/headshot.png'
+        image: './images/headshot.png'
     },
     {
         name: 'PROJECT 2',
         type: 'GAME DEV',
-        image: '../images/headshot.png'
+        image: './images/headshot.png'
     },
     {
         name: 'PROJECT 3',
         type: 'GAME DEV',
-        image: '../images/work-1.png'
+        image: './images/work-1.png'
     },
     {
         name: 'PROJECT 4',
         type: 'GAME DEV',
-        image: '../images/headshot.png'
+        image: './images/headshot.png'
     },
     {
         name: 'PROJECT 5',
         type: 'GAME DEV',
-        image: '../images/headshot.png'
+        image: './images/headshot.png'
     },
     {
         name: 'PROJECT 6',
         type: 'GAME DEV',
-        image: '../images/headshot.png'
+        image: './images/headshot.png'
     },
     {
         name: 'PROJECT 7',
         type: 'GAME DEV',
-        image: '../images/headshot.png'
+        image: './images/headshot.png'
     },
     {
         name: 'PROJECT 8',
         type: 'GAME DEV',
-        image: '../images/headshot.png'
+        image: './images/headshot.png'
     },
 
 ]
