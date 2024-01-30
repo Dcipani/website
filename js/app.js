@@ -1,56 +1,99 @@
 import { createProjects } from "./projects.js";
-
-const main = document.querySelector('main');
-
 createProjects();
 
-function lerp(start, end, t) {
-    return start * (1-t) + end * t;
-}
-const stickyPortfolio = document.querySelector('.sticky_portfolio');
-const projectsSlider = document.querySelector('.projects_slider');
-const project_images = projectsSlider.querySelectorAll('.project_image');
+// ------------------------------------------------------- SCROLL ANIMATIONS -------------------------------------------------------
 
-let projectTargetX = 0;
-let projectCurrentX = 0;
+const scrollEntry = document.querySelectorAll(".enter-on-scroll")
 
-let percentages = {
-    small: 700,
-    medium: 300, 
-    large: 100
-}
+scrollEntry.forEach(scrollEntry => {
+    let entryLeft = scrollEntry.querySelector(".on-scroll-left")
+    let entryRight = scrollEntry.querySelector(".on-scroll-right")
 
-let limit = window.innerWidth < 600 ? percentages.small : window.innerWidth < 1100 ? percentages.medium : percentages.large
-
-function setLimits() {
-    limit = window.innerWidth < 600 ? percentages.small : window.innerWidth < 1100 ? percentages.medium : percentages.large
-}
-
-window.addEventListener('resize', setLimits);
+    let gt = gsap.timeline({
+        scrollTrigger: {
+            trigger: scrollEntry,
+            start: 'top 50%',
+            end: 'bottom 70%',
+            // markers: true,
+            scrub: true
+        }
+    })
+    
+    gt.fromTo(entryLeft, {xPercent: -100, opacity: 0}, {xPercent: 0, opacity: 1})
+    gt.fromTo(entryRight, {xPercent: 100, opacity: 0}, {xPercent: 0, opacity: 1}, '<')
 
 
-function animatePortfolio() {
-    let offsetTop = stickyPortfolio.parentElement.offsetTop;
-    let percentage = ((main.scrollTop - offsetTop) / window.innerHeight) * 100;
-    percentage = percentage < 0 ? 0 : percentage > limit ? limit : percentage;
-    projectTargetX = percentage;
-    projectCurrentX = lerp(projectCurrentX, projectTargetX, .04);
-    projectsSlider.style.transform = `translate3d(${-(projectCurrentX)}vw, 0, 0)`;
-
-    for (const image of project_images) {
-        image.style.objectPosition = `${100.0*percentage / limit}% 50%`;
-    }
-}
+    
+})
 
 
+// ------------------------------------------------------- GALLERY -------------------------------------------------------
 
-function animate() {
-    animatePortfolio();
-    requestAnimationFrame(animate);
+const track = document.getElementById("image-track");
+
+const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+
+const handleOnUp = () => {
+  track.dataset.mouseDownAt = "0";  
+  track.dataset.prevPercentage = track.dataset.percentage;
 }
 
-animate();
+const handleOnMove = e => {
+  if(track.dataset.mouseDownAt === "0") return;
+  
+  const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+        maxDelta = window.innerWidth / 2;
+  
+  const percentage = (mouseDelta / maxDelta) * -100,
+        nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+        nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+  track.dataset.percentage = nextPercentage;
 
+  track.animate({
+    transform: `translate(${nextPercentage}%, -50%)`
+  }, { duration: 1200, fill: "forwards" });
+  
+  for(const image of track.querySelectorAll(".project_image")) {
+    image.animate({
+      objectPosition: `${100 + nextPercentage}% center`
+    }, { duration: 1200, fill: "forwards" });
+
+  }
+
+}
+
+window.onmousedown = e => handleOnDown(e);
+
+window.ontouchstart = e => handleOnDown(e.touches[0]);
+
+window.onmouseup = e => handleOnUp(e);
+
+window.ontouchend = e => handleOnUp(e.touches[0]);
+
+window.onmousemove = e => handleOnMove(e);
+
+window.ontouchmove = e => handleOnMove(e.touches[0]);
+
+
+
+// ------------------------------------------------------- EMAIL BREAK -------------------------------------------------------
+
+
+
+const explodeText = id => {
+    const element = document.getElementById(id),
+        text = element.innerText.split('');
+    element.innerText = "";
+
+    text.forEach(letter => {
+        const span = document.createElement('span');
+        span.className = "exploding_letter";
+        span.innerText = letter;
+        element.appendChild(span);
+    })
+}
+
+explodeText("exploding_text");
 
 
 

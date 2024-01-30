@@ -46,14 +46,16 @@ const projects = [
 
 const createProjects = () => {
     projects.forEach(project => {
-        let panel = document.createElement('div');
-        panel.classList.add('project');
+        let projectDiv = document.createElement('div');
+        projectDiv.classList.add('project');
+        projectDiv.classList.add('enter-on-scroll');
 
-        let imageContainer = document.createElement('div');
-        imageContainer.className = `image_container`;
 
         let image = document.createElement('img');
         image.classList.add('project_image');
+        image.classList.add('on-scroll-right');
+
+        image.draggable = false;
         image.src = project.image;
 
         let projectDetails = document.createElement('div');
@@ -64,13 +66,10 @@ const createProjects = () => {
 
         let projectType = document.createElement('p');
         projectType.innerText = project.type;
-
         projectDetails.append(projectTitle, projectType)
+        projectDiv.append(image, projectDetails);
 
-        imageContainer.appendChild(image);
-        panel.append(imageContainer, projectDetails);
-
-        document.querySelector('.projects_slider').appendChild(panel);
+        document.getElementById('image-track').appendChild(projectDiv);
     })
 
 }

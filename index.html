@@ -4,65 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/671d949f37.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/671d949f37.js" crossorigin="anonymous"></script>    
+
     <title>Portfolio</title>
 </head>
 <body>
-    <main> 
-        <div class="scroll_container">
-            <section id="hero"> 
-                <div class="hero_container">
-                    <div class="hero_text">
-                        <div class="hero_title_pre">
-                            <h2>hi, my name is</h2>
-                        </div>
-                        <div class="hero_title">
-                            <h1 class = "hero_title_header"> dario cipani</h1>
-                        </div>
-                        <div class="hero_title_sub">
-                            <h4>I'm a CS and Linguistics student at Trinity College Dublin.</h4>
-                        </div>
-                    </div>
-                    <div class="hero_image">
-                        <div class="bubble_headshot"></div>
-                        <div class="bubble"></div>
-                    </div>
-    
-                </div>
-            </section>
-            <section id="about">
-                <div class="about_container">
-                    <div class="about_image">
-                    </div>
-                    <div class="about_text">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque necessitatibus eveniet deserunt voluptatem facere alias unde exercitationem, harum adipisci iure ab corrupti recusandae sequi voluptas enim eum quod. Aliquid, explicabo.</p>
-                    </div>
-                </div>
-    
-            </section>
-            <section id="portfolio">
-                <div class="sticky_portfolio">
-                    <div class="slider_container">
-                        <div class="projects_slider"></div>
-                    </div>
-                </div>
-            </section>
-            <section id = "contact">
-                <div class="contact-container">
-                    <h1 class="subtitle">Contact Me</h1>
-                    <div class="social-icons">
-                        <a href="https://ie.linkedin.com/in/dario-cipani-b82bb3269" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/Dcipani" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    </div>
-                    <img src="images/headshot.png" width="250px" height="250px">
-                </div>
-            </section>
-            <div class="copyright-footer">
-                <center>Copyright © 2024 Dario Cipani. All rights reserved.</center>
-            </div>
+<section></section>
+<section id="about">
+    <div class="enter-on-scroll">
+        <div class="on-scroll-left">
+            <img src="./images/headshot.png" width="300" >
         </div>
-        
-    </main>
-    <script type="module" src="./js/app.js"></script>
+        <div class="on-scroll-right">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam at itaque enim nihil voluptatem natus, accusantium modi cumque debitis omnis dolore in, pariatur odit facilis quia quaerat voluptate consectetur molestiae?</p>
+        </div>
+    </div>
+
+</section>
+<section id="portfolio">
+
+        <div class="enter-on-scroll" id="image-track" data-mouse-down-at="0" data-prev-percentage="0"></div>
+
+</section>
+
+<section id="contact">
+    <div class="socials">
+        <div class="social-icons">
+            <a href="https://ie.linkedin.com/in/dario-cipani-b82bb3269" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/Dcipani" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <div class="email_address">
+            <a id="exploding_text" href="https://ie.linkedin.com/in/dario-cipani-b82bb3269" target="_blank" >
+                <p> johndoe@gmail.com</p>
+            </a>
+        </div>
+    </div>
+    
+    
+</section>
+
+            
+            
+<script type="module" src="./js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script> 
+<script>
+    const lenis = new Lenis()
+    lenis.on('scroll', ScrollTrigger.update)
+
+    gsap.ticker.add((time)=>{
+    lenis.raf(time * 1000)
+    })
+
+    gsap.ticker.lagSmoothing(0)
+</script> -->
 </body>
 </html>
