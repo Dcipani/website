@@ -93,13 +93,10 @@ const createProjects = () => {
 
         let projectDetails = document.createElement('div');
         projectDetails.classList.add('project_details');
+        projectDetails.classList.add('on-scroll-right');
 
         let projectTitle = document.createElement('p');
         projectTitle.innerText = project.name;
-
-        // let projectLink = document.createElement('a');
-        // projectLink.href = project.link;
-        // projectLink.innerText = 'click me!';
 
         let projectType = document.createElement('p');
         projectType.innerText = project.type;
