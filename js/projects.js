@@ -10,7 +10,7 @@ const projects = [
     {
         name: 'PROJECT 2',
         type: 'GAME DEV',
-        image: '/images/headshot.png',
+        image: '../posa-man.png',
         link: 'project1.html'
     },
     {
@@ -105,7 +105,6 @@ const createProjects = () => {
 
         document.getElementById('image-track').append(projectDiv);
 
-        document.getElementById('header').append(image);
     })
 
 
