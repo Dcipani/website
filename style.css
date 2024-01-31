@@ -42,7 +42,7 @@ html.lenis {
   }
   
   .lenis.lenis-smooth {
-    scroll-behavior: auto !important;
+    scroll-behavior: smooth !important;
   }
   
   .lenis.lenis-smooth [data-lenis-prevent] {
@@ -50,7 +50,7 @@ html.lenis {
   }
   
   .lenis.lenis-stopped {
-    overflow: clip;
+    overflow: hidden;
   }
   
   .lenis.lenis-scrolling iframe {
@@ -288,7 +288,14 @@ nav ul li a {
 #portfolio {
     background: black;
     height: 100%;
-    height: 200vh;
+
+}
+.projects-header{
+    padding: 50px;
+    color: white;
+}
+.image-track-holder{
+    height: 300vh;
 
 }
 
@@ -297,11 +304,9 @@ nav ul li a {
     position: sticky;
     top: 4em;
     user-select: none;
+    margin-left: 20vw;
 }
-.projects-header{
-    padding: 50px;
-    color: white;
-}
+
  
 .project_image {
   width: 40vmin;

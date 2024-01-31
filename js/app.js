@@ -3,14 +3,14 @@
 
 
 // ------------------------------------------------------- LENIS SETUP -------------------------------------------------------
-const lenis = new Lenis()
-    lenis.on('scroll', ScrollTrigger.update)
+// const lenis = new Lenis()
+//     lenis.on('scroll', ScrollTrigger.update)
 
-    gsap.ticker.add((time)=>{
-    lenis.raf(time * 1000)
-    })
+//     gsap.ticker.add((time)=>{
+//     lenis.raf(time * 1000)
+//     })
 
-    gsap.ticker.lagSmoothing(0)
+//     gsap.ticker.lagSmoothing(0)
 
 
 
@@ -38,23 +38,7 @@ scrollEntry.forEach(scrollEntry => {
 
 })
 
-// const circleEffect = document.querySelectorAll(".scroll-circle-effect")
-// circleEffect.forEach(entry => {
 
-
-//   let gt = gsap.timeline({
-//       scrollTrigger: {
-//           trigger: entry,
-//           start: 'top 60%',
-//           end: 'bottom 90%',
-//           markers: true,
-//           scrub: true
-//       }
-//   })
-  
-//   gt.fromTo(entry, {scale: 0, opacity: 0}, {scale: 100, opacity: 1})
-
-// })
 // ------------------------------------------------------- ABOUT -------------------------------------------------------
 
 
