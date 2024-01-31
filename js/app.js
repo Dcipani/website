@@ -1,7 +1,6 @@
-import { createProjects } from "./projects.js";
+// import { createProjects } from "./projects.js";
 // createProjects();
 
-// ------------------------------------------------------- BARBA SETUP -------------------------------------------------------
 
 // ------------------------------------------------------- LENIS SETUP -------------------------------------------------------
 const lenis = new Lenis()
@@ -27,9 +26,9 @@ scrollEntry.forEach(scrollEntry => {
     let gt = gsap.timeline({
         scrollTrigger: {
             trigger: scrollEntry,
-            start: 'top 50%',
-            end: 'bottom 70%',
-            markers: true,
+            start: 'top 60%',
+            end: 'bottom 90%',
+            // markers: true,
             scrub: true
         }
     })

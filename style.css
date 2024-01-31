@@ -22,6 +22,7 @@ html, body{
     overscroll-behavior: none;
     height: fit-content;
     width: 100%;
+    scroll-behavior: smooth;
 }
 
 section{
@@ -56,6 +57,35 @@ html.lenis {
     pointer-events: none;
   }
 
+
+
+
+
+/* -------------------------------------------------- Navbar -------------------------------------------------- */
+nav{
+    background: var(--brown);
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+nav ul {
+    display: flex;
+    padding: 18px;
+}
+nav ul li {
+    list-style: none;
+    display: inline-block;
+
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    margin-right: 25px;
+    font-size: 20px;
+}
+
+
 /* -------------------------------------------------- Header -------------------------------------------------- */
 .header-text {
 
@@ -66,6 +96,7 @@ html.lenis {
     opacity: 0;
     font-size: 65px;
     font-weight: 510;
+    color: #8e2d2d;
     animation: swingInTop .6s ease .1s forwards;
     transform: translateY(-10rem) rotateZ(-30deg);
 
@@ -179,7 +210,7 @@ html.lenis {
     height: 350px;
     box-sizing: border-box;
     padding: 35px;
-    border-radius: 6mm;
+    /* border-radius: 6mm; */
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -280,7 +311,7 @@ html.lenis {
 .project_details{
     width: 100%;
     height: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .95));
     position: absolute;
     border-radius: 20px;
     left: 0;
@@ -306,7 +337,7 @@ html.lenis {
     
 }
 
-.project:hover{
+.project:hover {
     transform: scale(1.1);
 }
 
@@ -344,10 +375,10 @@ html.lenis {
 .exploding_letter {
     display: inline-block;
     transition: transform 350ms ease-in-out;
-    color: pink;
+    color: black;
 }
 #exploding_text:hover > .exploding_letter {
-    transition-duration: 800ms;
+    transition-duration: 250ms;
 }
 
 #exploding_text:hover > .exploding_letter:nth-child(1){
