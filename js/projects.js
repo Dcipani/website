@@ -104,7 +104,10 @@ const createProjects = () => {
         projectDiv.append(image, projectDetails);
 
         document.getElementById('image-track').append(projectDiv);
+
+        document.getElementById('header').append(image);
     })
+
 
 }
 
