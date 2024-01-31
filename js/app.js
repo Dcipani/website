@@ -15,23 +15,6 @@ const lenis = new Lenis()
 
 
 
-// ------------------------------------------------------- HEADER ANIMATIONS -------------------------------------------------------
-
-
-const bumpies = document.querySelectorAll('.bumpy_text');
-for (let i = 0; i < bumpies.length; i++) {
-  const bumpyText = new SplitType( `#bumpy_text${i}`)
-  gsap.to('.char', {
-    y:0,
-    stagger: 0.05,
-    delay: 0.2,
-    duration: .1
-  })
-}
-
-
-
-
 
 // ------------------------------------------------------- SCROLL ANIMATIONS -------------------------------------------------------
 
@@ -40,7 +23,7 @@ const scrollEntry = document.querySelectorAll(".enter-on-scroll")
 scrollEntry.forEach(scrollEntry => {
     let entryLeft = scrollEntry.querySelector(".on-scroll-left")
     let entryRight = scrollEntry.querySelector(".on-scroll-right")
-
+  
     let gt = gsap.timeline({
         scrollTrigger: {
             trigger: scrollEntry,
@@ -58,30 +41,7 @@ scrollEntry.forEach(scrollEntry => {
     
 })
 // ------------------------------------------------------- ABOUT -------------------------------------------------------
-// let cards = document.querySelectorAll('.card');
-// function cardRotation() {
-//   let angleAt = 0;
-//   cards.forEach((card) => {
-//     if(card.classList.contains('active-card')) {
 
-//       card.style.transform = 'translate(50vw, -100vh)  rotate(45deg)';
-//     } else {
-
-//       card.style.transform = `rotate(${angleAt}deg)`;
-//       angleAt -= 15;
-//     }
-
-//   })
-
-// }
-// cardRotation();
-
-// window.addEventListener('scroll', ()=> {
-//   let prop = stack.getBoundingClientRect().top/window.innerHeight;
-//   if (prop<=0) {
-//     let n = cards.length;
-//   }
-// })
 
 let cards = document.querySelectorAll(".card");
       let stackArea = document.querySelector(".stack-area");
@@ -93,7 +53,7 @@ let cards = document.querySelectorAll(".card");
             card.style.transform = `translate(-50%, -120vh) rotate(-48deg)`;
           } else {
             card.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
-            angle = angle - 10;
+            angle = angle - 15;
           }
         });
       }

@@ -10,7 +10,7 @@ const projects = [
     {
         name: 'PROJECT 2',
         type: 'GAME DEV',
-        image: 'https://images.unsplash.com/photo-1706276902620-fc6fa70aedb4?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDM4fDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D',
+        image: 'url(../images/headshot.png)',
         link: 'project1.html'
     },
     {
