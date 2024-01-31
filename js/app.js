@@ -28,7 +28,7 @@ scrollEntry.forEach(scrollEntry => {
             trigger: scrollEntry,
             start: 'top 60%',
             end: 'bottom 90%',
-            markers: true,
+            markers: false,
             scrub: true
         }
     })
