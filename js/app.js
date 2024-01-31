@@ -28,7 +28,7 @@ scrollEntry.forEach(scrollEntry => {
             trigger: scrollEntry,
             start: 'top 60%',
             end: 'bottom 90%',
-            // markers: true,
+            markers: true,
             scrub: true
         }
     })
@@ -36,14 +36,30 @@ scrollEntry.forEach(scrollEntry => {
     gt.fromTo(entryLeft, {xPercent: -100, opacity: 0}, {xPercent: 0, opacity: 1})
     gt.fromTo(entryRight, {xPercent: 100, opacity: 0}, {xPercent: 0, opacity: 1}, '<')
 
-
-    
 })
+
+// const circleEffect = document.querySelectorAll(".scroll-circle-effect")
+// circleEffect.forEach(entry => {
+
+
+//   let gt = gsap.timeline({
+//       scrollTrigger: {
+//           trigger: entry,
+//           start: 'top 60%',
+//           end: 'bottom 90%',
+//           markers: true,
+//           scrub: true
+//       }
+//   })
+  
+//   gt.fromTo(entry, {scale: 0, opacity: 0}, {scale: 100, opacity: 1})
+
+// })
 // ------------------------------------------------------- ABOUT -------------------------------------------------------
 
 
 let cards = document.querySelectorAll(".card");
-      let stackArea = document.querySelector(".stack-area");
+  let stackArea = document.querySelector(".stack-area");
 
       function rotateCards() {
         let angle = 0;
@@ -79,49 +95,70 @@ let cards = document.querySelectorAll(".card");
 // ------------------------------------------------------- GALLERY -------------------------------------------------------
 
 const track = document.getElementById("image-track");
+let trackArea = document.getElementById("portfolio");
 
-const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
 
-const handleOnUp = () => {
-  track.dataset.mouseDownAt = "0";  
-  track.dataset.prevPercentage = track.dataset.percentage;
-}
+window.addEventListener("scroll", () => {
+  let proportion = trackArea.getBoundingClientRect().top / window.innerHeight;
 
-const handleOnMove = e => {
-  if(track.dataset.mouseDownAt === "0") return;
+  if (proportion <= 0) {
   
-  const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-        maxDelta = window.innerWidth;
-  
-  const percentage = (mouseDelta / maxDelta) * -100,
-        nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-        nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -80);
-  track.dataset.percentage = nextPercentage;
-
-  track.animate({
-    transform: `translate(${nextPercentage}%, -50%)`
-  }, { duration: 1200, fill: "forwards" });
-  
-  for(const image of track.querySelectorAll(".project_image")) {
-    image.animate({
-      objectPosition: `${100 + nextPercentage}% center`
+    track.animate({
+      transform: `translate(${proportion * 100}%, 0%)`
     }, { duration: 1200, fill: "forwards" });
 
+    for(const image of track.querySelectorAll(".project_image")) {
+      image.animate({
+        objectPosition: `${100 + proportion* 100}% center`
+      }, { duration: 1200, fill: "forwards" });
+
+    } 
   }
+  });
 
-}
 
-window.onmousedown = e => handleOnDown(e);
+// const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
 
-window.ontouchstart = e => handleOnDown(e.touches[0]);
+// const handleOnUp = () => {
+//   track.dataset.mouseDownAt = "0";  
+//   track.dataset.prevPercentage = track.dataset.percentage;
+// }
 
-window.onmouseup = e => handleOnUp(e);
+// const handleOnMove = e => {
+//   if(track.dataset.mouseDownAt === "0") return;
+  
+//   const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+//         maxDelta = window.innerWidth;
+  
+//   const percentage = (mouseDelta / maxDelta) * -100,
+//         nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+//         nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+//   track.dataset.percentage = nextPercentage;
 
-window.ontouchend = e => handleOnUp(e.touches[0]);
+//   track.animate({
+//     transform: `translate(${nextPercentage}%, 0%)`
+//   }, { duration: 1200, fill: "forwards" });
+  
+//   for(const image of track.querySelectorAll(".project_image")) {
+//     image.animate({
+//       objectPosition: `${100 + nextPercentage}% center`
+//     }, { duration: 1200, fill: "forwards" });
 
-window.onmousemove = e => handleOnMove(e);
+//   }
 
-window.ontouchmove = e => handleOnMove(e.touches[0]);
+// }
+
+// window.onmousedown = e => handleOnDown(e);
+
+// window.ontouchstart = e => handleOnDown(e.touches[0]);
+
+// window.onmouseup = e => handleOnUp(e);
+
+// window.ontouchend = e => handleOnUp(e.touches[0]);
+
+// window.onmousemove = e => handleOnMove(e);
+
+// window.ontouchmove = e => handleOnMove(e.touches[0]);
 
 
 

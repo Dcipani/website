@@ -50,7 +50,7 @@ html.lenis {
   }
   
   .lenis.lenis-stopped {
-    overflow: hidden;
+    overflow: clip;
   }
   
   .lenis.lenis-scrolling iframe {
@@ -98,7 +98,7 @@ nav ul li a {
     font-weight: 510;
     color: #8e2d2d;
     animation: swingInTop .6s ease .1s forwards;
-    transform: translateY(-10rem) rotateZ(-30deg);
+    transform: translateY(-30rem) rotateZ(-30deg);
 
 }
 .header-text h2{
@@ -106,7 +106,7 @@ nav ul li a {
     margin: 20px;
 
     animation: swingInTop .3s ease .4s forwards;
-    transform: translateY(-3rem) rotateZ(90deg);
+    transform: translateY(-5rem) rotateZ(90deg);
 }
 @keyframes swingInTop{
     to {
@@ -185,12 +185,20 @@ nav ul li a {
   }
   .stack-area {
     width: 100%;
-    height: 300vh;
+    height: 280vh;
     position: relative;
     display: flex;
     justify-content: center;
   }
-  .right,
+  .right {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    flex-basis: 60%;
+  }
   .left {
     height: 100vh;
     display: flex;
@@ -198,7 +206,7 @@ nav ul li a {
     justify-content: center;
     position: sticky;
     top: 0;
-    flex-basis: 50%;
+    flex-basis: 40%;
   }
   .cards {
     width: 100%;
@@ -206,8 +214,8 @@ nav ul li a {
     position: relative;
   }
   .card {
-    width: 350px;
-    height: 350px;
+    width: 450px;
+    height: 450px;
     box-sizing: border-box;
     padding: 35px;
     /* border-radius: 6mm; */
@@ -277,20 +285,24 @@ nav ul li a {
   }
 
 /* -------------------------------------------------- Image Container -------------------------------------------------- */
-.projects-header{
-   padding: 50px;
+#portfolio {
+    background: black;
+    height: 100%;
+    height: 200vh;
+
 }
+
 #image-track {
-  display: flex;
-  gap: 4vmin;
-  position: absolute;
-  left: 0%;
-  top: 50%;
-  transform: translate(0%, -50%); 
-  user-select: none; /* -- Prevent image highlighting -- */
-
+    display: flex;
+    position: sticky;
+    top: 4em;
+    user-select: none;
 }
-
+.projects-header{
+    padding: 50px;
+    color: white;
+}
+ 
 .project_image {
   width: 40vmin;
   height: 56vmin;
@@ -301,6 +313,7 @@ nav ul li a {
 }
 
 .project{
+    margin-right: 4vmin;
     position: relative;
     border-radius: 20px;
     overflow: hidden;
