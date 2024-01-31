@@ -10,7 +10,7 @@ const projects = [
     {
         name: 'PROJECT 2',
         type: 'GAME DEV',
-        image: 'website/images/headshot.png',
+        image: 'https://dcipani.github.io/website/images/headshot.png',
         link: 'project1.html'
     },
     {
