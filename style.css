@@ -34,6 +34,7 @@ section{
 
 h1{
     font-size: 65px;
+    color: var(--burgundy);
 }
 /* -------------------------------------------------- LENIS SETUP CSS -------------------------------------------------- */
 
@@ -62,29 +63,62 @@ html.lenis {
 
 
 /* -------------------------------------------------- Navbar -------------------------------------------------- */
-nav{
-    background: var(--brown);
-    height: 60px;
-    width: 100%;
-    position: fixed;
-    z-index: 100;
-}
-nav ul {
+nav {
     display: flex;
-    padding: 18px;
+    align-items: center;
+    justify-content: right;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--brown);
+    width: 100%;
+    height: 60px;
+    transition: all 0.7s ease-in-out;
+    flex-wrap: wrap;
+    
 }
-nav ul li {
-    list-style: none;
+
+nav ul li{
     display: inline-block;
-
+    list-style: none;
+    margin: 0px 30px;
 }
-nav ul li a {
+
+nav ul li a{
+    color: var(--white);
     text-decoration: none;
-    color: white;
-    margin-right: 25px;
-    font-size: 20px;
+    font-size: 18px;
+    position: relative;
+    transition: font-size 0.5s;
 }
 
+nav ul li a::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: var(--white);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.4s;
+    
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+nav ul li a.active{
+    font-size:24px;
+}
+nav ul li a.active::after{
+    width: 100%;
+}
+
+.scroll-down nav {
+    transform: translate3d(0, -100%, 0);
+}
 
 /* -------------------------------------------------- Header -------------------------------------------------- */
 .header-text {
@@ -136,7 +170,7 @@ nav ul li a {
     height: 500px;
     width: 500px;
     box-shadow: 0 20px 5px 5px rgba(0,0,0,.2);
-    animation: bubble-enter 5s ease-in-out forwards,
+    animation: bubble-enter 1.5s ease-in-out forwards,
             bubble-animation 5s ease-in-out infinite;    
     transition: all 1s ease-in-out;
     margin-top: 150px;
@@ -307,7 +341,7 @@ nav ul li a {
     color: white;
 }
 .image-track-holder{
-    height: 300vh;
+    height: 325vh;
 
 }
 
@@ -462,6 +496,44 @@ nav ul li a {
 #exploding_text:hover .exploding_letter:nth-child(17){
     transform: translate(20%, 60%) rotate(-17deg);
 }
+
+/*------------------------------------------------ COPYRIGHT ------------------------------------------------*/
+
+.copyright-footer{
+    margin-top: 100px;
+    width: 100vw;
+    background: var(--brown);
+    height: 60px;
+}
+.copyright-footer center{
+    color: var(--white);
+    padding: 20px 20px;
+    font-size: 16;
+}
+
+/*------------------------------------------------ BLOG-SPECIFIC ------------------------------------------------*/
+.blog-title {
+    top: 80px;
+    left: 50%;
+    margin-top: 80px;
+    margin-left: 40%;
+}
+.blog-demo {
+    margin-top: 40px;
+    padding-left: 25vw;
+    padding-right: 25vw;
+
+}
+.blog-demo video{
+    width: 100%;
+    height: 60vh;
+}
+
+.blog-content{ 
+    padding: 60px;
+    font-size: 18px;
+}
+
 /* -------------------------------------------------- SMALL SCREENS -------------------------------------------------- */
 
 

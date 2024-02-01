@@ -12,9 +12,48 @@
 
 //     gsap.ticker.lagSmoothing(0)
 
+// ------------------------------------------------------- NAVBAR -------------------------------------------------------
+
+let lastScroll = 0;
+let body = document.body;
+window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+
+    if (lastScroll <= 0) {
+        body.classList.remove("scroll-up");
+    }
+
+    if (currentScroll >= lastScroll && !body.classList.contains("scroll-down")) {
+        body.classList.remove("scroll-up");
+        body.classList.add("scroll-down");
+    }
+    if (currentScroll < lastScroll && body.classList.contains("scroll-down")) {
+        body.classList.remove("scroll-down");
+        body.classList.add("scroll-up");
+    }
+    lastScroll = currentScroll;
+
+    //highlight current func
+    let sections =document.querySelectorAll('section');
+    let navLinks = document.querySelectorAll('nav ul li a');
+    sections.forEach(sec =>{
+      let top = window.scrollY+300;
+      let offset = sec.offsetTop;
+      let height = sec.offsetHeight;
+      let id = sec.getAttribute('id');
+
+      if (top >= offset && top < offset + height) {
+          navLinks.forEach(links => {
+              links.classList.remove("active");
+              document.querySelector('nav ul li a[href*='+id+']').classList.add('active');
+          });
+      }
+    });
+});
 
 
 
+    
 // ------------------------------------------------------- SCROLL ANIMATIONS -------------------------------------------------------
 
 const scrollEntry = document.querySelectorAll(".enter-on-scroll")
@@ -84,8 +123,8 @@ let trackArea = document.getElementById("portfolio");
 
 window.addEventListener("scroll", () => {
   let proportion = trackArea.getBoundingClientRect().top / window.innerHeight;
-
-  if (proportion <= 0) {
+  console.log(proportion)
+  if (proportion <= 0 && proportion >= -2) {
   
     track.animate({
       transform: `translate(${proportion * 100}%, 0%)`
@@ -93,56 +132,12 @@ window.addEventListener("scroll", () => {
 
     for(const image of track.querySelectorAll(".project_image")) {
       image.animate({
-        objectPosition: `${100 + proportion* 100}% center`
+        objectPosition: `${ 100+ proportion* 50}% center`
       }, { duration: 1200, fill: "forwards" });
 
     } 
   }
   });
-
-
-// const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
-
-// const handleOnUp = () => {
-//   track.dataset.mouseDownAt = "0";  
-//   track.dataset.prevPercentage = track.dataset.percentage;
-// }
-
-// const handleOnMove = e => {
-//   if(track.dataset.mouseDownAt === "0") return;
-  
-//   const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-//         maxDelta = window.innerWidth;
-  
-//   const percentage = (mouseDelta / maxDelta) * -100,
-//         nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-//         nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
-//   track.dataset.percentage = nextPercentage;
-
-//   track.animate({
-//     transform: `translate(${nextPercentage}%, 0%)`
-//   }, { duration: 1200, fill: "forwards" });
-  
-//   for(const image of track.querySelectorAll(".project_image")) {
-//     image.animate({
-//       objectPosition: `${100 + nextPercentage}% center`
-//     }, { duration: 1200, fill: "forwards" });
-
-//   }
-
-// }
-
-// window.onmousedown = e => handleOnDown(e);
-
-// window.ontouchstart = e => handleOnDown(e.touches[0]);
-
-// window.onmouseup = e => handleOnUp(e);
-
-// window.ontouchend = e => handleOnUp(e.touches[0]);
-
-// window.onmousemove = e => handleOnMove(e);
-
-// window.ontouchmove = e => handleOnMove(e.touches[0]);
 
 
 
