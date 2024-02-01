@@ -3,6 +3,7 @@
     --white: #f0e7d0;
     --pink: #e2d0ca;
     --brown: #b6947c;
+    --dark-brown: #79553b;
     --burgundy: #8e2d2d;
 
     --max-width: 1440px;
@@ -332,7 +333,7 @@ nav ul li a.active::after{
 
 /* -------------------------------------------------- Image Container -------------------------------------------------- */
 #portfolio {
-    background: black;
+    background: var(--dark-brown);
     height: 100%;
 
 }
