@@ -29,7 +29,6 @@ html, body{
 section{
     width: 100%;    
     height: 100vh;
-    margin-bottom: 100px;
     position: relative;
 }
 
@@ -330,6 +329,39 @@ nav ul li a.active::after{
     align-items: center;
     justify-content: center;
   }
+/* -------------------------------------------------- Circle Transition -------------------------------------------------- */
+
+#circle-transition{
+    width: 100vw;
+    height: 200vh;
+}
+.circle-trans-holder{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+.circle-trans{
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    background: var(--dark-brown);
+    display: flex;
+    border-radius: 100%;
+    transform: scale(0);
+    position: inherit;
+}
+
+.portfolio-header{
+    padding: 50px;
+    justify-content: center;
+    align-content: center;
+    color: var(--white);
+    position: sticky;
+}
+
+
 
 /* -------------------------------------------------- Image Container -------------------------------------------------- */
 #portfolio {
@@ -339,7 +371,7 @@ nav ul li a.active::after{
 }
 .projects-header{
     padding: 50px;
-    color: white;
+    color: var(--white);
 }
 .image-track-holder{
     height: 325vh;

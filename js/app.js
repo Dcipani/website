@@ -115,6 +115,27 @@ let cards = document.querySelectorAll(".card");
           rotateCards();
         }
       });
+
+
+
+// ------------------------------------------------------- CIRCLE Transition -------------------------------------------------------
+
+const circleTrans = document.querySelector(".circle-trans-holder")
+const circle = circleTrans.querySelector(".circle-trans")
+  
+let circle_gt = gsap.timeline({
+
+    scrollTrigger: {
+        trigger: circle,
+        markers: true,
+        start: 2400,
+        end: 3000,
+        scrub: true
+    }
+})
+
+circle_gt.fromTo(circle, {scale: 0}, {scale: 2})
+
 // ------------------------------------------------------- GALLERY -------------------------------------------------------
 
 const track = document.getElementById("image-track");
