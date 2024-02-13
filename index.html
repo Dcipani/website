@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     
-    
-
+    <script type="module" src="./js/app.js" ></script>
 
     <title>Portfolio Website</title>
 </head>
 <body>
 
-<nav> 
+<nav class="main-nav"> 
     <ul>  
         <li> <a href="#header" id="active"> Home </a></li>
         <li> <a href="#about"> About </a></li>
@@ -34,69 +33,62 @@
 </section>
 <section id="about">
 
-    <div class="center">
-            
-        <div class="stack-area">
-
-            <div class="left">
-                <h1>About Me</h1>
-                <div class="sub-title">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio pariatur, soluta vel deleniti facilis doloremque hic ut fuga! Recusandae magnam saepe quidem, labore dolores error laborum quasi similique praesentium sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius consequatur laudantium maiores est asperiores repellat! Adipisci recusandae quos, explicabo aspernatur iusto modi doloremque quam vitae, at amet, consequatur incidunt.
-                </div>
-            </div>
-
-            <div class="right">
-                <div class="cards">
-                    <div class="card">
-                        <img src="./images/headshot.png" width="375px" height="375px">
-                    </div>
-                    <div class="card">
-                        <div class="sub">Skills</div>
-                        <div class="content">
-                            Juggling
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="sub">Experience</div>
-                        <div class="content">
-                            Chicken
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="sub">Education</div>
-                        <div class="content">
-                            Trinity (2021-25)
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="sub">Interests</div>
-                        <div class="content">Juggling</div>
-                    </div>
-                    <div class="card">
-                        <div class="sub">Languages</div>
-                        <div class="content">English</div>
-                    </div>
-                </div>
-            </div>
-        </div>  
+    <div class="about-container">
+        
     </div>
+    <div class="col-table enter-on-scroll">
+
+        <div class="col-1 on-scroll-left">
+            <h1>About Me</h1>
+            <div class="polaroid"></div>
+            <div class="sub-title">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio pariatur, soluta vel deleniti facilis doloremque hic ut fuga! Recusandae magnam saepe quidem, labore dolores error laborum quasi similique praesentium sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eius consequatur laudantium maiores est asperiores repellat! Adipisci recusandae quos, explicabo aspernatur iusto modi doloremque quam vitae, at amet, consequatur incidunt.
+            </div>
+
+        </div>
+        <div class="col-2 on-scroll-right">
+            <div class="about-tabs">
+                <p class="about-tab selected" onclick="openTab('skills')">Skills</p>
+                <p class="about-tab" onclick="openTab('interests')">Interests</p>
+                <p class="about-tab" onclick="openTab('education')">Education</p>
+                <p class="about-tab" onclick="openTab('experience')">Experience</p>
+            </div>
+            <div class="about-tab-contents selected" id="skills">
+                <div class="card" id="purple">
+                    <h2> Skills</h2>
+                </div>
+            </div>
+            <div class="about-tab-contents" id="interests">
+                <div class="card" id="green">
+                    <h2> Interests</h2>
+                </div>
+            </div>
+            <div class="about-tab-contents" id="education">
+                <div class="card" id="brown">
+                    <h2> Education</h2>
+                </div>
+            </div>
+            <div class="about-tab-contents" id="experience">
+                <div class="card" id="blue">
+                    <h2> Experience</h2>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>  
+    
 
 
 </section>
-<!-- <section id="circle-transition">
-    <div class="circle-trans-holder">
-        <div class="circle-trans">
-            <h1 class="projects-header"> Portfolio</h1>
-        </div>
-    </div>
-</section> -->
+
 <section id="portfolio">
 
     <div class="image-track-holder">
         
-        <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
-            <div class="left">
-                <h1 class="portfolio-header "> Projects</h1>
+        <div id="image-track" class = "enter-on-scroll">
+            <div class="left on-scroll-left">
+                <h1 class="projects-header "> Projects</h1>
             </div>
             <div class="right">
     
@@ -190,19 +182,35 @@
                 <p> johndoe@gmail.com</p>
             </a>
         </div>
+        <div class="copyright-footer">
+            <center>Copyright © 2024 Dario Cipani. All rights reserved.</center>
+        </div>
     </div>
-    
     
 </section>
 
     
-<div class="copyright-footer">
-    <center>Copyright © 2024 Dario Cipani. All rights reserved.</center>
-</div>
+
             
            
             
+<script>
 
+var aboutTabs = document.getElementsByClassName("about-tab");
+var aboutTabContents = document.getElementsByClassName("about-tab-contents");
+
+function openTab(tabName) {
+  for(tab of aboutTabs) {
+    tab.classList.remove('selected');
+    
+  }
+  for(contents of aboutTabContents) {
+    contents.classList.remove('selected'); 
+  }
+  event.currentTarget.classList.add('selected');
+  document.getElementById(tabName).classList.add('selected');
+}
+</script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -214,7 +222,6 @@
 <script src="https://kit.fontawesome.com/671d949f37.js" crossorigin="anonymous"></script> 
 
 
-    <script type="module" src="./js/app.js" defer></script>
 
 </body>
 </html>

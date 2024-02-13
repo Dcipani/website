@@ -1,6 +1,3 @@
-// import { createProjects } from "./projects.js";
-// createProjects();
-
 
 // ------------------------------------------------------- LENIS SETUP -------------------------------------------------------
 // const lenis = new Lenis()
@@ -65,8 +62,8 @@ scrollEntry.forEach(scrollEntry => {
     let gt = gsap.timeline({
         scrollTrigger: {
             trigger: scrollEntry,
-            start: 'top 60%',
-            end: 'bottom 90%',
+            start: 'top 40%',
+            end: 'bottom 80%',
             markers: false,
             scrub: true
         }
@@ -81,60 +78,6 @@ scrollEntry.forEach(scrollEntry => {
 // ------------------------------------------------------- ABOUT -------------------------------------------------------
 
 
-let cards = document.querySelectorAll(".card");
-  let stackArea = document.querySelector(".stack-area");
-
-      function rotateCards() {
-        let angle = 0;
-        cards.forEach((card) => {
-          if (card.classList.contains("active")) {
-            card.style.transform = `translate(-50%, -120vh) rotate(-48deg)`;
-          } else {
-            card.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
-            angle = angle - 15;
-          }
-        });
-      }
-
-      rotateCards();
-
-      window.addEventListener("scroll", () => {
-        let proportion =
-          stackArea.getBoundingClientRect().top / window.innerHeight;
-        if (proportion <= 0) {
-          let n = cards.length;
-          let index = Math.ceil((proportion * n) / 2);
-          index = Math.abs(index) - 1;
-          for (let i = 0; i < n; i++) {
-            if (i <= index) {
-              cards[i].classList.add("active");
-            } else {
-              cards[i].classList.remove("active");
-            }
-          }
-          rotateCards();
-        }
-      });
-
-
-
-// ------------------------------------------------------- CIRCLE Transition -------------------------------------------------------
-
-// const circleTrans = document.querySelector(".circle-trans-holder")
-// const circle = circleTrans.querySelector(".circle-trans")
-  
-// let circle_gt = gsap.timeline({
-
-//     scrollTrigger: {
-//         trigger: circle,
-//         markers: true,
-//         start: 2400,
-//         end: 3000,
-//         scrub: true
-//     }
-// })
-
-// circle_gt.fromTo(circle, {scale: 0}, {scale: 2})
 
 // ------------------------------------------------------- GALLERY -------------------------------------------------------
 
