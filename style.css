@@ -444,14 +444,25 @@ nav ul li a.active::after{
 
 
 /* -------------------------------------------------- CONTACT -------------------------------------------------- */
-.socials{
-    position: absolute;
-    left: 50%;
-    top: 50%;
+
+.contact-header{
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    
+}
+.contact-header h1{
+    position: relative;
+
     justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
 }
 
-.social-icons a{
+.social-icon a{
    text-decoration: none;
    font-size: 100px;
    margin: 30px;
@@ -459,7 +470,7 @@ nav ul li a.active::after{
    display: inline-block;
    transition: transform 0.5s;
 }
-.social-icons a:hover{
+.social-icon a:hover{
    color: black;
    transform: translateY(-5px);
 }

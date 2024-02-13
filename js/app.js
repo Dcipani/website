@@ -120,21 +120,21 @@ let cards = document.querySelectorAll(".card");
 
 // ------------------------------------------------------- CIRCLE Transition -------------------------------------------------------
 
-const circleTrans = document.querySelector(".circle-trans-holder")
-const circle = circleTrans.querySelector(".circle-trans")
+// const circleTrans = document.querySelector(".circle-trans-holder")
+// const circle = circleTrans.querySelector(".circle-trans")
   
-let circle_gt = gsap.timeline({
+// let circle_gt = gsap.timeline({
 
-    scrollTrigger: {
-        trigger: circle,
-        markers: true,
-        start: 2400,
-        end: 3000,
-        scrub: true
-    }
-})
+//     scrollTrigger: {
+//         trigger: circle,
+//         markers: true,
+//         start: 2400,
+//         end: 3000,
+//         scrub: true
+//     }
+// })
 
-circle_gt.fromTo(circle, {scale: 0}, {scale: 2})
+// circle_gt.fromTo(circle, {scale: 0}, {scale: 2})
 
 // ------------------------------------------------------- GALLERY -------------------------------------------------------
 
