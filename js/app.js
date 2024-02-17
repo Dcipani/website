@@ -1,14 +1,4 @@
 
-// ------------------------------------------------------- LENIS SETUP -------------------------------------------------------
-// const lenis = new Lenis()
-//     lenis.on('scroll', ScrollTrigger.update)
-
-//     gsap.ticker.add((time)=>{
-//     lenis.raf(time * 1000)
-//     })
-
-//     gsap.ticker.lagSmoothing(0)
-
 // ------------------------------------------------------- NAVBAR -------------------------------------------------------
 
 // let lastScroll = 0;
@@ -76,9 +66,18 @@ scrollEntry.forEach(scrollEntry => {
 
 
 // ------------------------------------------------------- ABOUT -------------------------------------------------------
+let path = document.querySelector('path');
+let pathLength = path.getTotalLength();
+path.style.strokeDasharray = pathLength + ' ' + pathLength;
+path.style.strokeDashoffset = pathLength;
+window.addEventListener('scroll', ()=> {
+  var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+  var drawLength = pathLength * scrollPercentage * 1.5;
 
+  path.style.strokeDashoffset = pathLength - drawLength;
 
-
+  
+});
 // ------------------------------------------------------- GALLERY -------------------------------------------------------
 
 const track = document.getElementById("image-track");
@@ -86,6 +85,7 @@ let trackArea = document.getElementById("portfolio");
 
 
 window.addEventListener("scroll", () => {
+  
   let proportion = trackArea.getBoundingClientRect().top / window.innerHeight;
   console.log(proportion)
   if (proportion <= 0 && proportion >= -2) {
@@ -101,6 +101,7 @@ window.addEventListener("scroll", () => {
 
     } 
   }
+
   });
 
 
