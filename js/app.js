@@ -1,26 +1,29 @@
+const timeline = gsap.timeline({
+  scrollTrigger: {
+      trigger: ".image-track-holder",
+      start: "top 20%",
+      end: "+=400", // adjust based on your content
+      scrub: true
+  }
+});
+
+timeline.to(".image-track-holder", {
+  backgroundColor: "#333333"
+});
+ScrollTrigger.create({
+  trigger: ".image-track-holder",
+  start: "top 20%",
+  end: "+=400", // adjust based on your content
+  onEnter: () => document.querySelector(".image-track-holder").classList.remove("dark-bg"),
+  onLeaveBack: () => document.querySelector(".image-track-holder").classList.add("dark-bg"),
+  });
 
 // ------------------------------------------------------- NAVBAR -------------------------------------------------------
 
-// let lastScroll = 0;
-// let body = document.body;
+
 window.addEventListener("scroll", () => {
-    // const currentScroll = window.scrollY;
 
-    // if (lastScroll <= 0) {
-    //     body.classList.remove("scroll-up");
-    // }
 
-    // if (currentScroll > lastScroll && !body.classList.contains("scroll-down")) {
-    //     body.classList.remove("scroll-up");
-    //     body.classList.add("scroll-down");
-    // }
-    // if (currentScroll <= lastScroll && body.classList.contains("scroll-down")) {
-    //     body.classList.remove("scroll-down");
-    //     body.classList.add("scroll-up");
-    // }
-    // lastScroll = currentScroll;
-
-    //highlight current func
     let sections =document.querySelectorAll('section');
     let navLinks = document.querySelectorAll('nav ul li a');
     sections.forEach(sec =>{
@@ -65,14 +68,14 @@ scrollEntry.forEach(scrollEntry => {
 })
 
 
-// ------------------------------------------------------- ABOUT -------------------------------------------------------
+// ------------------------------------------------------- SVG -------------------------------------------------------
 let path = document.querySelector('path');
 let pathLength = path.getTotalLength();
 path.style.strokeDasharray = pathLength + ' ' + pathLength;
 path.style.strokeDashoffset = pathLength;
 window.addEventListener('scroll', ()=> {
   var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-  var drawLength = pathLength * scrollPercentage * 1.5;
+  var drawLength = pathLength * scrollPercentage * 1.4;
 
   path.style.strokeDashoffset = pathLength - drawLength;
 
